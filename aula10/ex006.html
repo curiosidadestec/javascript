@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos DOM</title>
+    <style>
+        div#area {
+            margin: auto;
+            background-color: #b6a12f;
+            width: 300px;
+            height: 300px;
+            line-height: 300px;
+            text-align: center;
+            font-size: 2em;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: white;
+        }
+        .entrou {
+            background-image: linear-gradient(200deg, hsl(64, 87%, 70%), hsl(65, 62%, 15%));
+            transition: all 0.25s ease-in-out;
+            background-attachment: fixed;
+        }
+        .branco {
+            background-image: linear-gradient(200deg, hsl(8, 79%, 69%), hsl(9, 65%, 15%));
+            background-attachment: fixed;
+            transition: all 0.25s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <div id="area" class="">
+        Entre em mim!
+    </div>
+    <script>
+        var area = window.document.getElementById('area')
+        area.addEventListener('mouseenter', entrar)
+        area.addEventListener('mouseout', sair)
+        function entrar() {
+            area.innerText = 'Entrou!'
+            document.querySelector('body').setAttribute("class","entrou");
+            area.style.backgroundColor = "#00000000"
+            area.style.color = "#ffffff"
+        }
+        function sair() {
+            area.innerText = "Saiu!"
+            document.querySelector('body').setAttribute("class","branco");
+            area.style.backgroundColor = "#ffffff00"
+            area.style.color = "#000000"
+        }
+    </script>
+</body>
+</html>

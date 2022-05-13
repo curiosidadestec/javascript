@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Velocidade do carro</title>
+</head>
+<body>
+    <input type="number" name="txt-vel" id="txt-vel">
+    <input type="button" value="ok" onclick="ok()">
+    <div id="res"></div>
+    <script>
+        function ok() {
+            var tx_vel = window.document.getElementById('txt-vel')
+            var vel = Number(tx_vel.value)
+            var res = window.document.getElementById('res')
+            if (vel <= 60) {
+                res.innerHTML = `Sua velocidade de <span style="color: blue;">${vel}Km/h </span>está ok`
+            }
+            else {
+                res.innerHTML = `Você será multado por alta velocidade!`
+            }
+        }
+    </script>
+</body>
+</html>
